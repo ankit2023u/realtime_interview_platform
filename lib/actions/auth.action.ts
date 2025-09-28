@@ -21,7 +21,7 @@ export async function signUp(params: SignUpParams) {
     await db.collection("users").doc(uid).set({
       name,
       email
-    });
+    })
 
     return {
       success: true,

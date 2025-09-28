@@ -26,7 +26,7 @@ const Page = () => {
           {dummyInterviews.map((interview) => (
             <InterviewCard {...interview} key={interview.id}/>
           ))}
-          <p>You haven&apos;t taken any interview yet</p>
+          {/*<p>You haven&apos;t taken any interview yet</p>*/}
         </div>
       </section>
 
@@ -36,7 +36,6 @@ const Page = () => {
           {dummyInterviews.map((interview) => (
             <InterviewCard {...interview} key={interview.id}/>
           ))}
-          <p>There are no interviews available</p>
         </div>
       </section>
     </>
