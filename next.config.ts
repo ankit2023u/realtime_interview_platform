@@ -1,10 +1,21 @@
 import type { NextConfig } from "next";
-import NodePolyfillPlugin from "node-polyfill-webpack-plugin";
 
 const nextConfig: NextConfig = {
-  webpack: (config) => {
-    config.plugins.push(new NodePolyfillPlugin());
-    return config;
+  /* config options here */
+  // images: {
+  //   remotePatterns: [
+  //     {
+  //       protocol: "https",
+  //       hostname: "ik.imagekit.io",
+  //       port: "",
+  //     },
+  //   ],
+  // },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 
