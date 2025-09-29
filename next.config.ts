@@ -1,26 +1,9 @@
-// next.config.ts
-
-import { NextConfig } from 'next';
-import { Configuration } from 'webpack';
+import type { NextConfig } from "next";
+import NodePolyfillPlugin from "node-polyfill-webpack-plugin";
 
 const nextConfig: NextConfig = {
-  webpack: (
-    config: Configuration,
-    { isServer }: { isServer: boolean }
-  ): Configuration => {
-    if (!isServer) {
-      // Safely initialize resolve object if it doesn't exist
-      config.resolve = config.resolve || {};
-
-      // Add fallbacks for Node.js core modules
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        assert: false,
-        debug: false,
-        'agent-base': false,
-      };
-    }
-
+  webpack: (config) => {
+    config.plugins.push(new NodePolyfillPlugin());
     return config;
   },
 };
